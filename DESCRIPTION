@@ -1,0 +1,26 @@
+Package: kevinbacran
+Title: Degrees of Separation Between CRAN authors
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Matt",
+           family = "Dray",
+           role = c("aut", "cre"),
+           email = "mwdray@gmail.com")
+Description: Calculate the shortest path through a graph network between any two 
+    authors listed on CRAN. Analagous to the Six Degrees of Kevin Bacon or Erdos
+    Number. Author X collaborates with author Y; author Z collaborates with Y
+    but not X, therefore the distance from X to Z is two.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/matt-dray/kevinbacran
+BugReports: https://github.com/matt-dray/kevinbacran/issues
+Imports: 
+    cranly,
+    dplyr,
+    ggplot2,
+    ggraph,
+    purrr,
+    tidygraph,
+    tidyr
+RoxygenNote: 6.1.0
