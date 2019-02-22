@@ -76,12 +76,32 @@
 <h2 class="hasAnchor">
 <a href="#what" class="anchor"></a>What?</h2>
 <p>How separated are authors on the Comprehensive R Archive Network (CRAN), the home of R packages?</p>
-<p>The aim is to provide some functions to approximate an implementation of <a href="https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon">The Six Degrees of Kevin Bacon</a>, or <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdos Numbers</a> and [variants(<a href="https://www.timeshighereducation.com/blog/whats-your-erdos-bacon-sabbath-number" class="uri">https://www.timeshighereducation.com/blog/whats-your-erdos-bacon-sabbath-number</a>).</p>
+<p>The aim is to provide some functions to approximate an implementation of <a href="https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon">The Six Degrees of Kevin Bacon</a>, or <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdos Numbers</a> and <a href="https://www.timeshighereducation.com/blog/whats-your-erdos-bacon-sabbath-number">variants</a>.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Install this development version with <code><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">remotes::install_github("matt-dray/kevinbacran")</a></code>.</p>
+</div>
+<div id="how-do" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-do" class="anchor"></a>How do?</h2>
+<pre><code><a href="https://www.rdocumentation.org/packages/base/topics/library">library(kevinbacran)
+
+# Get CRAN data and turn into tidygraph of authors 
+# (nodes) and packages (edges)
+combo_graph &lt;- kb_combos()
+
+# Get subset of CRAN tidygraph composed of named authors
+# plus the packages and authors that connect them
+pair_graph &lt;- kb_pair(combo_graph, "Yihui Xie", "Garrett Grolemund")
+
+# Print distance value between named authors
+kb_distance(pair_graph)
+
+# Plot network graph of authors and packages
+# Named authors are terminals
+kb_plot(pair_graph)</a></code></pre>
 </div>
 </div>
   </div>
