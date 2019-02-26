@@ -71,7 +71,7 @@ kb_plot <- function(pair_graph) {
     geom_edge_fan(
       aes(
         label = paste0("{", package, "}"),
-        family = "mono"
+        family = "sans"
       ),
       edge_colour = "lightgrey",
       label_colour = "lightgrey",
@@ -81,7 +81,7 @@ kb_plot <- function(pair_graph) {
     geom_node_text(
       aes(label = name),
       repel = TRUE,
-      family = "mono"
+      family = "sans"
     ) +
     theme_graph()
 
