@@ -68,12 +68,21 @@ kb_plot <- function(pair_graph) {
 
   plot <- pair_graph %>%
     ggraph(layout = "nicely") +
-    geom_edge_link(
-      aes(label = package),
-      angle_calc = "along",
-      label_dodge = unit(2.5, "mm")
+    geom_edge_fan(
+      aes(
+        label = paste0("{", package, "}"),
+        family = "mono"
+      ),
+      edge_colour = "lightgrey",
+      label_colour = "lightgrey",
+      angle_calc = "none"
     ) +
-    geom_node_label(aes(label = name)) +
+    geom_node_point() +
+    geom_node_text(
+      aes(label = name),
+      repel = TRUE,
+      family = "mono"
+    ) +
     theme_graph()
 
   return(plot)
