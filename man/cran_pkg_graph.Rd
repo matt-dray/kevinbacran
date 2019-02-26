@@ -4,7 +4,7 @@
 \name{cran_pkg_graph}
 \alias{cran_pkg_graph}
 \title{Package-Author tidygraph from a CRAN database snapshot}
-\format{A large tbl_graph (10 elements, 5.8 Mb)
+\format{A large tbl_graph (16911 nodes, 99542 edges, 10 elements, 5.8 Mb)
 \describe{
   \item{Nodes}{package authors}
   \item{Edges}{package names}
