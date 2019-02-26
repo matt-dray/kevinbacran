@@ -24,3 +24,5 @@ Imports:
     tidygraph,
     tidyr
 RoxygenNote: 6.1.0
+Suggests: 
+    testthat
