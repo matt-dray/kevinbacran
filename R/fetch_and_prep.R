@@ -28,7 +28,8 @@ kb_combos <- function() {
     clean_CRAN_db() %>%
     as_tibble() %>%
     select(package, author) %>%
-    unnest()
+    unnest() %>%
+    mutate(author = iconv(author, to='ASCII//TRANSLIT'))
 
   cat("\nGetting combinations of authors per package...\n")
 
