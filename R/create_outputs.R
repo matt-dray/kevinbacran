@@ -50,7 +50,7 @@ kb_distance <- function(pair_graph) {
 #' @param pair_graph A tidygraph object of CRAN authors/packages created with
 #'     \code{kb_pair()}
 #' @import ggraph
-#' @import ggplot2
+#' @importFrom ggplot2 aes unit
 #' @export
 #' @return A ggraph plot
 #' @examples
@@ -83,7 +83,7 @@ kb_plot <- function(pair_graph) {
       repel = TRUE,
       family = "sans"
     ) +
-    theme_void()
+    theme_graph()
 
   return(plot)
 
