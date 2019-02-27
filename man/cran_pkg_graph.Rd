@@ -3,8 +3,8 @@
 \docType{data}
 \name{cran_pkg_graph}
 \alias{cran_pkg_graph}
-\title{Package-Author tidygraph from a CRAN database snapshot}
-\format{A large tbl_graph (16915 nodes, 99560 edges, 10 elements, 5.8 Mb)
+\title{Package-Author Tidygraph From A CRAN Database Snapshot}
+\format{A large tbl_graph (16924 nodes, 99560 edges, 10 elements, 5.8 Mb)
 \describe{
   \item{Nodes}{package authors}
   \item{Edges}{package names}
