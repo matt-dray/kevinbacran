@@ -71,10 +71,10 @@ kb_plot <- function(pair_graph) {
     geom_edge_fan(
       aes(
         label = paste0("{", package, "}"),
-        family = "sans"
+        family = "mono"
       ),
-      edge_colour = "lightgrey",
-      label_colour = "lightgrey",
+      edge_colour = "grey90",
+      label_colour = "grey50",
       angle_calc = "none"
     ) +
     geom_node_point() +
@@ -83,7 +83,7 @@ kb_plot <- function(pair_graph) {
       repel = TRUE,
       family = "sans"
     ) +
-    theme_graph()
+    theme_void()
 
   return(plot)
 
