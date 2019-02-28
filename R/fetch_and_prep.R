@@ -37,13 +37,10 @@ kb_combos <- function() {
   cran_combos <- cran_tidy %>%
     group_by(package) %>%
     filter(n() > 1) %>%  # ignore solo authors
-    split(.$package) %>%
-    map(., 2) %>%
-    map(~combn(.x, m = 2)) %>%
-    map(~t(.x)) %>%
-    map(as_tibble) %>%
-    bind_rows(.id = "package") %>%
-    select(V1, V2, package)
+    ungroup() %>%
+    left_join(x = ., y = ., by = "package") %>%
+    filter(author.y > author.x) %>%
+    select(author.x, author.y, package) %>%
 
   cat("\nCreating tidy graph object from combinations...\n")
 
