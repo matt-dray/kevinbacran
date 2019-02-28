@@ -40,7 +40,7 @@ kb_combos <- function() {
     ungroup() %>%
     left_join(x = ., y = ., by = "package") %>%
     filter(author.y > author.x) %>%
-    select(author.x, author.y, package) %>%
+    select(author.x, author.y, package)
 
   cat("\nCreating tidy graph object from combinations...\n")
 
