@@ -1,5 +1,7 @@
 # kevinbacran: Degrees of Separation Between CRAN authors
 
+<img src="man/figures/logo.png" align="right" />
+
 ![](https://media.giphy.com/media/FltCW7GUbF5iE/giphy.gif)
 
 _This package is in development._
