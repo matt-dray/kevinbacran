@@ -1,6 +1,6 @@
 # kevinbacran: Degrees of Separation Between CRAN authors
 
-<img src="man/figures/logo.png" align="right" />
+<img src="man/figures/logo.png" align="right" height=140/>
 
 ![](https://media.giphy.com/media/FltCW7GUbF5iE/giphy.gif)
 
