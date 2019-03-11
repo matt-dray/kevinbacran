@@ -67,7 +67,8 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    <div id="kevinbacran-degrees-of-separation-between-cran-authors" class="section level1">
+    
+<div id="kevinbacran-degrees-of-separation-between-cran-authors" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#kevinbacran-degrees-of-separation-between-cran-authors" class="anchor"></a>kevinbacran: Degrees of Separation Between CRAN authors</h1></div>
 <p><img src="reference/figures/logo.png" align="right" height="140/"></p>
@@ -76,35 +77,93 @@
 <div id="what" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what" class="anchor"></a>What?</h2>
-<p>How separated are authors on the Comprehensive R Archive Network (CRAN), the home of R packages?</p>
+<p>How separated (in a <a href="https://en.wikipedia.org/wiki/Graph_theory">graph-theory</a> sense) are authors on the Comprehensive R Archive Network (CRAN), the home of R packages?</p>
 <p>The aim is to provide some functions to approximate an implementation of <a href="https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon">The Six Degrees of Kevin Bacon</a>, or <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdos Numbers</a> and <a href="https://www.timeshighereducation.com/blog/whats-your-erdos-bacon-sabbath-number">variants</a>.</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install this development version with <code><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">remotes::install_github("matt-dray/kevinbacran")</a></code>.</p>
 </div>
+<div id="read-more" class="section level1">
+<h1 class="hasAnchor">
+<a href="#read-more" class="anchor"></a>Read more</h1>
+<ul>
+<li>
+<a href="https://mattdray.shinyapps.io/hadley-number/">{kevinbacran} demo: what’s your Hadley Number?</a> by <a href="https://twitter.com/mattdray">Matt Dray</a>: a shiny app to get and visualise the separation between CRAN authors and Hadley Wickham.</li>
+<li>
+<a href="https://www.rostrum.blog/2019/02/27/hadley-number/">‘What’s your Hadley Number?’</a> by <a href="https://twitter.com/mattdray">Matt Dray</a>: a blogpost introducing the package and the Shiny app</li>
+<li>
+<a href="https://nacnudus.github.io/duncangarmonsway/posts/2019-02-27-with-added-bacran/">‘With added bacran’</a> by <a href="https://twitter.com/mattdray">Duncan Garmonsway</a>: a blogpost using the package to find out more about author separation on CRAN:</li>
+</ul>
 <div id="how-do" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-do" class="anchor"></a>How do?</h2>
-<pre><code>library(kevinbacran)
+<pre><code><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github"># Install this development version with
+remotes::install_github("matt-dray/kevinbacran")
 
-# Get CRAN data and turn into tidygraph of authors 
+# Load the package
+library(kevinbacran)
+
+# Get a tidygraph of authors from CRAN data 
 # (nodes) and packages (edges)
 combo_graph &lt;- kb_combos()
 
 # Get subset of CRAN tidygraph composed of named authors
 # plus the packages and authors that connect them
-pair_graph &lt;- kb_pair(combo_graph, "Yihui Xie", "Garrett Grolemund")
+pair_graph &lt;- kb_pair(
+  tidy_graph = combo_graph,
+  name_a = "Aaron Christ",
+  name_b = "Hadley Wickham"
+)
 
 # Print distance value between named authors
-kb_distance(pair_graph)
+kb_distance(pair_graph = pair_graph)
 
 # Plot network graph of authors and packages
 # Named authors are terminals
-kb_plot(pair_graph)</code></pre>
+kb_plot(pair_graph = pair_graph)</a></code></pre>
+<p>Note that the functions of {kevinbacran} are prefixed with <code>kb_*</code>.</p>
+<p>A snapshot of the CRAN graph from late Feb 2019 is available from the package by calling <code>cran_graph</code>. This may be useful for testing purposes.</p>
+</div>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<p>This package makes use of several other excellent packages.</p>
+<div id="cranly" class="section level3">
+<h3 class="hasAnchor">
+<a href="#cranly" class="anchor"></a>{cranly}</h3>
+<p>Ioannis Kosmidis (2019). cranly: Package Directives and Collaboration Networks in CRAN. R package version 0.3. <a href="https://CRAN.R-project.org/package=cranly" class="uri">https://CRAN.R-project.org/package=cranly</a></p>
+</div>
+<div id="dplyr" class="section level3">
+<h3 class="hasAnchor">
+<a href="#dplyr" class="anchor"></a>{dplyr}</h3>
+<p>Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2019). dplyr: A Grammar of Data Manipulation. R package version 0.8.0.1. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a></p>
+</div>
+<div id="ggplot2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#ggplot2" class="anchor"></a>{ggplot2}</h3>
+<p>H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.</p>
+</div>
+<div id="ggraph" class="section level3">
+<h3 class="hasAnchor">
+<a href="#ggraph" class="anchor"></a>{ggraph}</h3>
+<p>Thomas Lin Pedersen (2018). ggraph: An Implementation of Grammar of Graphics for Graphs and Networks. R package version 1.0.2. <a href="https://CRAN.R-project.org/package=ggraph" class="uri">https://CRAN.R-project.org/package=ggraph</a></p>
+</div>
+<div id="purrr" class="section level3">
+<h3 class="hasAnchor">
+<a href="#purrr" class="anchor"></a>{purrr}</h3>
+<p>Lionel Henry and Hadley Wickham (2019). purrr: Functional Programming Tools. R package version 0.3.0. <a href="https://CRAN.R-project.org/package=purrr" class="uri">https://CRAN.R-project.org/package=purrr</a></p>
+</div>
+<div id="tidygraph" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tidygraph" class="anchor"></a>{tidygraph}</h3>
+<p>Thomas Lin Pedersen (2019). tidygraph: A Tidy API for Graph Manipulation. R package version 1.1.2. <a href="https://CRAN.R-project.org/package=tidygraph" class="uri">https://CRAN.R-project.org/package=tidygraph</a></p>
+</div>
+<div id="tidyr" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tidyr" class="anchor"></a>{tidyr}</h3>
+<p>Hadley Wickham and Lionel Henry (2018). tidyr: Easily Tidy Data with ‘spread()’ and ‘gather()’ Functions. R package version 0.8.2. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a></p>
 </div>
 </div>
+</div>
+
   </div>
 
   <div class="col-md-3" id="sidebar">
