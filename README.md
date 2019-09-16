@@ -1,10 +1,10 @@
-# kevinbacran: Degrees of Separation Between CRAN authors
+# kevinbacran: Degrees of Separation Between CRAN Authors
 
-<img src="man/figures/logo.png" align="right" height=140/>
+<img src='man/figures/logo.png' align="right" height="139" />
 
 ![](https://media.giphy.com/media/FltCW7GUbF5iE/giphy.gif)
 
-_This package is in development._
+_This package comes with no guarantees whatsoever._
 
 ## What?
 

@@ -6,10 +6,12 @@
 \alias{kevinbacran-package}
 \title{kevinbacran: Degrees of Separation Between CRAN authors}
 \description{
-Calculate the shortest path through a graph network between any two
-authors listed on CRAN. Analagous to the Six Degrees of Kevin Bacon or Erdos
-Number. Author X collaborates with author Y; author Z collaborates with Y
-but not X, therefore the distance from X to Z is two.
+\if{html}{\figure{logo.png}{options: align='right'}}
+
+Calculate the shortest path through a graph network between any two 
+    authors listed on CRAN. Analagous to the Six Degrees of Kevin Bacon or Erdos
+    Number. Author X collaborates with author Y; author Z collaborates with Y
+    but not X, therefore the distance from X to Z is two.
 }
 \seealso{
 Useful links:
